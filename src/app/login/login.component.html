@@ -1,0 +1,22 @@
+<div class="giant-header">
+  <h1>Vinyl Vibes</h1>
+  <h2>Login</h2>
+</div>
+
+<div class="login-container">
+  <div class="input-container">
+    <label for="email">Email:</label>
+    <input id="email" [(ngModel)]="user.email" type="email" placeholder="Enter your email">
+  </div>
+
+  <div class="input-container">
+    <label for="password">Password:</label>
+    <input id="password" [(ngModel)]="user.password" type="password" placeholder="Enter your password">
+  </div>
+
+  <button class="login-button" (click)="onLogin()">Login</button>
+
+  <div class="register-link">
+    Don't have an account? <a routerLink="/register">Register</a>
+  </div>
+</div>

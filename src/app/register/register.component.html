@@ -1,0 +1,37 @@
+<div class="giant-header">
+    <h1>Vinyl Vibes</h1>
+    <h2>Register</h2>
+  </div>
+  
+  <div class="login-container">
+    <div class="input-container">
+      <label for="firstName">First Name:</label>
+      <input id="firstName" [(ngModel)]="user.firstName" type="text" placeholder="Enter your first name">
+    </div>
+  
+    <div class="input-container">
+      <label for="lastName">Last Name:</label>
+      <input id="lastName" [(ngModel)]="user.lastName" type="text" placeholder="Enter your last name">
+    </div>
+  
+    <div class="input-container">
+      <label for="email">Email:</label>
+      <input id="email" [(ngModel)]="user.email" type="email" placeholder="Enter your email">
+    </div>
+  
+    <div class="input-container">
+      <label for="password">Password:</label>
+      <input id="password" [(ngModel)]="user.password" type="password" placeholder="Enter your password">
+    </div>
+  
+    <div class="input-container">
+      <label for="confirmPassword">Confirm Password:</label>
+      <input id="confirmPassword" [(ngModel)]="user.confirmPassword" type="password" placeholder="Confirm your password">
+    </div>
+  
+    <button class="login-button" (click)="onRegister()">Register</button>
+  
+    <div class="register-link">
+      Back to <a routerLink="/login">Login</a>
+    </div>
+  </div>

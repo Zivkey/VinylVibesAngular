@@ -5,6 +5,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AlbumComponent } from './components/album/album.component';
+import { ReviewsComponent } from './components/reviews/reviews.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -18,6 +19,9 @@ const routes: Routes = [
       },
       {
         path: 'profile', component: ProfileComponent
+      },
+      {
+        path: 'reviews', component: ReviewsComponent
       }
     ]
   },

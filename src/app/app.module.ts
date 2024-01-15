@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AlbumComponent } from './components/album/album.component';
+import { ReviewsComponent } from './components/reviews/reviews.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AlbumComponent } from './components/album/album.component';
     RegisterComponent,
     ProfileComponent,
     AlbumComponent,
-    HomeComponent
+    HomeComponent,
+    ReviewsComponent
   ],
   imports: [
     BrowserModule,

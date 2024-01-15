@@ -14,10 +14,6 @@
     margin-bottom: 20px;
     color: #333;
   
-    h1 {
-      font-size: 4rem;
-    }
-  
     h2 {
       padding-top: 2rem;
       text-align: center;
@@ -71,5 +67,12 @@
       color: #3498db;
       text-decoration: none;
     }
+  }
+
+  .error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   

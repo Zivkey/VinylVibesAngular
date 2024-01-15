@@ -1,5 +1,4 @@
 <div class="giant-header">
-    <h1>Vinyl Vibes</h1>
     <h2>Register</h2>
   </div>
   
@@ -26,7 +25,11 @@
   
     <div class="input-container">
       <label for="confirmPassword">Confirm Password:</label>
-      <input id="confirmPassword" [(ngModel)]="user.confirmPassword" type="password" placeholder="Confirm your password">
+      <input id="confirmPassword" [(ngModel)]="confirmPassword" type="password" placeholder="Confirm your password">
+    </div>
+
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
     </div>
   
     <button class="login-button" (click)="onRegister()">Register</button>

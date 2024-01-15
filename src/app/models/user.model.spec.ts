@@ -2,6 +2,14 @@ import { User } from './user.model';
 
 describe('User', () => {
   it('should create an instance', () => {
-    expect(new User()).toBeTruthy();
+    const user = new User(
+      '1',
+      'John',
+      'Doe',
+      'john.doe@example.com',
+      'password123',
+      false
+    );
+    expect(user).toBeTruthy();
   });
 });

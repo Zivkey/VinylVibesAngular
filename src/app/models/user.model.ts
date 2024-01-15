@@ -1,10 +1,10 @@
 export class User {
-    id!: string;
-    firstName!: string;
-    lastName!: string;
-    email!: string;
-    password!: string;
-    admin!: boolean;
-    createdAt!: string;
-    updatedAt!: string;
-  }
+  constructor(
+    public id: string,
+    public firstName: string,
+    public lastName: string,
+    public email: string,
+    public password: string,
+    public admin: boolean
+  ) {}
+}

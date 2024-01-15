@@ -1,0 +1,26 @@
+<div class="header">
+    <h1>Vinyl Vibes</h1>
+</div>
+<div class="container">
+    <div class="sidebar">
+        <ul>
+            <li><a routerLink="/profile"
+                    routerLinkActive="active">Profile</a></li>
+            <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+            <li><a routerLink="/reviews"
+                    routerLinkActive="active">Reviews</a></li>
+            <li><a routerLink="/logout">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h2>Welcome to Vinyl Vibes!</h2>
+        <div class="account-info">
+            <p *ngIf="firstName && lastName">Hello, {{ firstName }} {{ lastName
+                }}!</p>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p>&copy; 2024 Vinyl Vibes. All rights reserved.</p>
+</div>

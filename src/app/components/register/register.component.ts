@@ -17,8 +17,6 @@ export class RegisterComponent {
     password: '',
     id: '',
     admin: false,
-    createdAt: '',
-    updatedAt: ''
   };
 
   confirmPassword: string = '';

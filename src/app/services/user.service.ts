@@ -7,18 +7,21 @@ import { User } from '../models/user.model';
   providedIn: 'root'
 })
 export class UserService {
-
-  private currentUser: User | null = null;
-  private baseUrl = 'http://localhost:8080/users'; 
+  private baseUrl = 'http://localhost:8080/users';
 
   constructor(private http: HttpClient) {}
 
   setCurrentUser(user: User) {
-    this.currentUser = user;
+    localStorage.setItem('currentUser', JSON.stringify(user));
   }
 
   getCurrentUser(): User | null {
-    return this.currentUser;
+    const storedUser = localStorage.getItem('currentUser');
+    return storedUser ? JSON.parse(storedUser) : null;
+  }
+
+  clearCurrentUser() {
+    localStorage.removeItem('currentUser');
   }
 
   register(user: User): Observable<any> {
@@ -27,5 +30,9 @@ export class UserService {
 
   login(user: User): Observable<User> {
     return this.http.post<User>(`${this.baseUrl}/login`, user);
+  }
+
+  updateUserProfile(user: User): Observable<any> {
+    return this.http.put(`${this.baseUrl}/update`, user);
   }
 }

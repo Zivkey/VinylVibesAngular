@@ -14,15 +14,10 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     children: [
-      {
-        path: 'albums', component: AlbumComponent
-      },
-      {
-        path: 'profile', component: ProfileComponent
-      },
-      {
-        path: 'reviews', component: ReviewsComponent
-      }
+      { path: '', redirectTo: 'albums', pathMatch: 'full' },
+      { path: 'albums', component: AlbumComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'reviews', component: ReviewsComponent }
     ]
   },
   { path: '', redirectTo: '/login', pathMatch: 'full' },

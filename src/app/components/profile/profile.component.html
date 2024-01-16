@@ -1,1 +1,36 @@
-<p>profile works!</p>
+<div class="profile-container">
+    <h2>User Profile</h2>
+    
+    <div>
+        <label>Email:</label>
+        <p>{{ user?.email }}</p>
+    </div>
+    
+    <div>
+        <label>{{ user?.admin ? 'Admin' : '' }}</label>
+    </div>
+    
+    <div class="input-container">
+        <label>First Name:</label>
+        <input *ngIf="user" [(ngModel)]="user.firstName" class="larger-input" />
+    </div>
+    
+    <div class="input-container">
+        <label>Last Name:</label>
+        <input *ngIf="user" [(ngModel)]="user.lastName" class="larger-input" />
+    </div>
+    
+    <div class="input-container">
+        <label>Password:</label>
+        <input *ngIf="user" [(ngModel)]="user.password" type="password" class="larger-input" />
+    </div>
+    
+    <div class="input-container">
+        <label>Confirm Password:</label>
+        <input *ngIf="user" [(ngModel)]="confirmPassword" type="password" class="larger-input" />
+    </div>
+
+    <button (click)="updateProfile()">Update</button>
+    <div class="error-message">{{ errorMessage }}</div>
+    <div class="update-message">{{ updateMessage }}</div>
+</div>

@@ -1,1 +1,24 @@
-<p>album works!</p>
+<div *ngIf="albums.length > 0">
+    <h2>Albums</h2>
+    <div class="album-cards">
+      <div *ngFor="let album of albums" class="album-card">
+        <img *ngIf="album.image" [src]="album.image" alt="{{ album.name }} Image" class="album-image" style="max-width: 200px; max-height: 200px; min-width: 200px; min-height: 200px;" />
+        <div class="album-details">
+          <h3>{{ album.name }}</h3>
+          <p>Artist: {{ album.artist }}</p>
+          <p>Description: {{ album.description }}</p>
+          <div class="vote-buttons">
+            <div class="count-container">
+              <p class="vote-count">{{ album.dislikes }}</p>
+              <button class="dislike">Dislike</button>
+            </div>
+            <div class="count-container">
+              <p class="vote-count">{{ album.likes }}</p>
+              <button class="like">Like</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

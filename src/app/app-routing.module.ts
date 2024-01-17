@@ -17,7 +17,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'albums', pathMatch: 'full' },
       { path: 'albums', component: AlbumComponent },
       { path: 'profile', component: ProfileComponent },
-      { path: 'reviews', component: ReviewsComponent }
+      { path: 'reviews', component: ReviewsComponent },
     ]
   },
   { path: '', redirectTo: '/login', pathMatch: 'full' },

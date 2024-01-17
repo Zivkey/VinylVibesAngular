@@ -1,0 +1,119 @@
+.album-details-container {
+  position: relative;
+  text-align: center;
+  margin: 50px auto;
+
+  button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #2980b9;
+    }
+  }
+
+
+  .back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  h2 {
+    margin-top: 20px;
+    font-size: 24px;
+  }
+
+  .album-image {
+    margin-top: 20px;
+    max-width: 400px;
+    max-height: 400px;
+    min-width: 400px;
+    min-height: 400px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  p {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  .reviews-form {
+    margin-top: 50px;
+    max-width: 600px; 
+    margin-left: auto;
+    margin-right: auto;
+
+    h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      label {
+        font-size: 16px;
+        margin-bottom: 8px;
+      }
+
+      input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 14px;
+      }
+
+      button {
+        background-color: #3498db;
+        color: #fff;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #2980b9;
+        }
+      }
+    }
+  }
+}
+
+.reviews-list {
+  margin-top: 50px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  h3 {
+    
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  div {
+    border: 3px solid #008cff;
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+
+    p {
+      margin: 0;
+      font-size: 16px;
+    }
+  }
+}

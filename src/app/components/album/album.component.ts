@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlbumService } from 'src/app/services/album.service';
 import { Album } from 'src/app/models/album';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-album', 
@@ -10,14 +11,18 @@ import { Album } from 'src/app/models/album';
 export class AlbumComponent implements OnInit {
   albums: Album[] = [];
 
-  constructor(private albumService: AlbumService) {}
+  constructor(private albumService: AlbumService, private router: Router) {}
 
   ngOnInit() {
     this.loadAlbums();
   }
 
   vote() {
+  }
 
+  goToAlbumPage(album: Album) {
+    this.albumService.setCurrentAlbum(album);
+    this.router.navigate(['home/reviews']); 
   }
 
   loadAlbums() {

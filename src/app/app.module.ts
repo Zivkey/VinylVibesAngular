@@ -20,7 +20,7 @@ import { ReviewsComponent } from './components/reviews/reviews.component';
     ProfileComponent,
     AlbumComponent,
     HomeComponent,
-    ReviewsComponent
+    ReviewsComponent,
   ],
   imports: [
     BrowserModule,

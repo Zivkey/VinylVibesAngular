@@ -15,4 +15,18 @@ export class AlbumService {
   getAllAlbums(): Observable<Album[]> {
     return this.http.get<Album[]>(this.baseUrl);
   }
+
+  setCurrentAlbum(album: Album) {
+    localStorage.setItem('currentAlbum', JSON.stringify(album));
+  }
+
+  getCurrentAlbum(): Album | null {
+    const storedAlbum = localStorage.getItem('currentAlbum');
+    return storedAlbum ? JSON.parse(storedAlbum) : null;
+  }
+
+  clearCurrentAlbum() {
+    localStorage.removeItem('currentAlbum');
+  }
+
 }

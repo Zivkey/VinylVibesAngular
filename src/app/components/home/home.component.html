@@ -1,5 +1,6 @@
 <div class="header">
     <h1>Vinyl Vibes</h1>
+    <h3 *ngIf="user?.admin">Admin panel</h3>
 </div>
 <div class="container">
     <div class="sidebar">
@@ -7,6 +8,7 @@
             <li><a routerLink="profile" routerLinkActive="active">Profile</a></li>
             <li><a routerLink="albums" routerLinkActive="active">Albums</a></li>
             <li *ngIf="user?.admin"><a routerLink="album-form" routerLinkActive="active">Album Form</a></li>
+            <li *ngIf="user?.admin"><a routerLink="register-form" routerLinkActive="active">User Form</a></li>
             <li><a routerLink="/logout">Logout</a></li>
         </ul>
     </div>

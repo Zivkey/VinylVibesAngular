@@ -1,1 +1,48 @@
-<p>albumform works!</p>
+<div class="container">
+  <div>
+    <label for="name">Name:</label>
+    <input id="name" [(ngModel)]="album.name" type="text"
+      placeholder="Enter album name">
+  </div>
+
+  <div>
+    <label for="image">Image Path:</label>
+    <input id="image" [(ngModel)]="album.image" type="text"
+      placeholder="Enter image path">
+  </div>
+
+  <div>
+    <label for="description">Description:</label>
+    <textarea id="description" [(ngModel)]="album.description"
+      placeholder="Enter description"></textarea>
+  </div>
+
+  <div>
+    <label for="artist">Artist:</label>
+    <input id="artist" [(ngModel)]="album.artist" type="text"
+      placeholder="Enter artist name">
+  </div>
+
+  <div>
+    <label for="year">Year:</label>
+    <input id="year" [(ngModel)]="album.year" type="number"
+      placeholder="Enter release year">
+  </div>
+
+  <div>
+    <label for="genre">Genre:</label>
+    <select id="genre" [(ngModel)]="album.genre" name="genre">
+      <option *ngFor="let genreOption of genreOptions" [value]="genreOption">
+        {{ genreOption }}
+      </option>
+    </select>
+  </div>
+
+  <button type="submit" (click)="onSubmit()">Create Album</button>
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+  <div *ngIf="successMessage" class="successMessage">
+    {{ successMessage }}
+  </div>
+</div>

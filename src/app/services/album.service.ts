@@ -16,6 +16,10 @@ export class AlbumService {
     return this.http.get<Album[]>(this.baseUrl);
   }
 
+  create(album: Album): Observable<any> {
+    return this.http.post(`${this.baseUrl}`, album);
+  }
+ 
   setCurrentAlbum(album: Album) {
     localStorage.setItem('currentAlbum', JSON.stringify(album));
   }

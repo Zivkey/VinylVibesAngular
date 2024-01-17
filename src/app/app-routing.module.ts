@@ -6,6 +6,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AlbumComponent } from './components/album/album.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
+import { AlbumformComponent } from './components/albumform/albumform.component';
+import { RegisteradminComponent } from './components/registeradmin/registeradmin.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -18,6 +20,8 @@ const routes: Routes = [
       { path: 'albums', component: AlbumComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'reviews', component: ReviewsComponent },
+      { path: 'album-form', component: AlbumformComponent },
+      { path: 'register-form', component: RegisteradminComponent }
     ]
   },
   { path: '', redirectTo: '/login', pathMatch: 'full' },

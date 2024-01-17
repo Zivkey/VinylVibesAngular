@@ -1,0 +1,48 @@
+<div class="giant-header">
+    <h2>Create new user</h2>
+</div>
+
+<div class="login-container">
+    <div class="input-container">
+        <label for="firstName">First Name:</label>
+        <input id="firstName" [(ngModel)]="user.firstName" type="text"
+            placeholder="Enter your first name">
+    </div>
+
+    <div class="input-container">
+        <label for="lastName">Last Name:</label>
+        <input id="lastName" [(ngModel)]="user.lastName" type="text"
+            placeholder="Enter your last name">
+    </div>
+
+    <div class="input-container">
+        <label for="email">Email:</label>
+        <input id="email" [(ngModel)]="user.email" type="email"
+            placeholder="Enter your email">
+    </div>
+
+    <div class="input-container">
+        <label for="password">Password:</label>
+        <input id="password" [(ngModel)]="user.password" type="password"
+            placeholder="Enter your password">
+    </div>
+
+    <div class="input-container">
+        <label for="confirmPassword">Confirm Password:</label>
+        <input id="confirmPassword" [(ngModel)]="confirmPassword"
+            type="password" placeholder="Confirm your password">
+    </div>
+
+    <div class="input-container input-toggle">
+        <label for="isAdmin">Is Admin:</label>
+        <input id="isAdmin" [(ngModel)]="user.admin" type="checkbox">
+    </div>
+
+    <button class="login-button" (click)="onRegister()">Register</button>
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+    </div>
+    <div *ngIf="successMessage" class="success-message">
+        {{ successMessage }}
+    </div>
+</div>

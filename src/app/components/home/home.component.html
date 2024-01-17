@@ -4,10 +4,9 @@
 <div class="container">
     <div class="sidebar">
         <ul>
-            <li><a routerLink="profile"
-                    routerLinkActive="active">Profile</a></li>
-            <li><a routerLink="albums"
-                    routerLinkActive="active">Albums</a></li>
+            <li><a routerLink="profile" routerLinkActive="active">Profile</a></li>
+            <li><a routerLink="albums" routerLinkActive="active">Albums</a></li>
+            <li *ngIf="user?.admin"><a routerLink="album-form" routerLinkActive="active">Album Form</a></li>
             <li><a routerLink="/logout">Logout</a></li>
         </ul>
     </div>

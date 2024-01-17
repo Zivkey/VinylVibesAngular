@@ -11,11 +11,11 @@
                 <div class="vote-buttons">
                     <div class="count-container">
                         <p class="vote-count">{{ album.dislikes }}</p>
-                        <button class="dislike">Dislike</button>
+                        <button class="dislike" (click)="dislikeCall(album.id)" [ngClass]="{'disliked-button': album.isDisliked}">Dislike</button>
                     </div>
                     <div class="count-container">
                         <p class="vote-count">{{ album.likes }}</p>
-                        <button class="like">Like</button>
+                        <button class="like" (click)="likeCall(album.id)" [ngClass]="{'liked-button': album.isLiked}">Like</button>
                     </div>
                 </div>
                 <button class="reviews" (click)="goToAlbumPage(album)">Reviews</button>

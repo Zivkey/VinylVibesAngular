@@ -1,4 +1,3 @@
-
 $primary-color: #3498db;
 $sidebar-bg: #2c3e50;
 $content-bg: #ecf0f1;
@@ -7,13 +6,14 @@ $footer-bg: #34495e;
 
 .container {
     display: flex;
+    min-height: 100vh;
 }
 
 .sidebar {
     width: 150px;
     background-color: $sidebar-bg;
     color: #fff;
-    height: 100vh;
+    min-height: 100vh;  
 
     ul {
         list-style: none;
@@ -41,6 +41,7 @@ $footer-bg: #34495e;
     flex: 1;
     padding: 20px;
     background-color: $content-bg;
+    overflow-y: auto;  
 
     h2 {
         color: $text-color;
@@ -68,6 +69,4 @@ $footer-bg: #34495e;
     color: #fff;
     padding: 10px;
     text-align: center;
-    bottom: 0;
-    width: 100%;
 }

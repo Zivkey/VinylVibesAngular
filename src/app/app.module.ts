@@ -11,6 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AlbumComponent } from './components/album/album.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
+import { AlbumformComponent } from './components/albumform/albumform.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ReviewsComponent } from './components/reviews/reviews.component';
     AlbumComponent,
     HomeComponent,
     ReviewsComponent,
+    AlbumformComponent,
   ],
   imports: [
     BrowserModule,

@@ -9,15 +9,11 @@ import { User } from 'src/app/models/user.model';
 })
 export class HomeComponent implements OnInit {
   user: User | null = null;
-  firstName: string | undefined;
-  lastName: string | undefined;
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.user = this.userService.getCurrentUser();
     console.log(this.user)
-    this.firstName = this.user?.firstName;
-    this.lastName = this.user?.lastName;
   }
 }

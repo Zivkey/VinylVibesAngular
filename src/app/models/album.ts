@@ -10,7 +10,9 @@ export class Album {
     public year: number,
     public likes: number,
     public dislikes: number,
-    public genre: Genre
+    public genre: Genre,
+    public isLiked: boolean,
+    public isDisliked: boolean,
 
    ) {}
 }

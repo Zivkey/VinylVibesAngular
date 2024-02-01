@@ -18,16 +18,16 @@ export class LoginComponent {
   onLogin() {
     this.errorMessage = null;
   
-    this.userService.login(this.user).subscribe(
-      (loggedInUser) => {
+    this.userService.login(this.user).subscribe({
+    next: (loggedInUser) => {
         console.log('Login successful');
         this.userService.setCurrentUser(loggedInUser);
         this.router.navigate(['/home']);
       },
-      (error) => {
+     error: (error) => {
         console.error('Error during login:', error);
         this.errorMessage = 'Password or email is not correct.';
       }
-    );
+  });
   }
 }

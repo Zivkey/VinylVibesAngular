@@ -12,7 +12,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./reviews.component.scss']
 })
 export class ReviewsComponent implements OnInit {
-  
+
   currentAlbum: Album | null = null;
   reviews: Review[] = [];
   review: Review = {
@@ -22,7 +22,7 @@ export class ReviewsComponent implements OnInit {
     albumId: '',
     userFirstName: '',
     userLastName: '',
-    userId: '',   
+    userId: '',
   };
 
   constructor(
@@ -60,29 +60,29 @@ export class ReviewsComponent implements OnInit {
     }
     this.review.albumId = newAlbum.id;
     this.review.userId = currentUser.id;
-    const newReview: Review = { ...this.review};
-    this.reviewService.submit(newReview).subscribe(
-      (response) => {
+    const newReview: Review = { ...this.review };
+    this.reviewService.submit(newReview).subscribe({
+      next: (response) => {
         console.log('Review submitted successfully:', response);
         this.review.title = '';
         this.review.reviewText = '';
         this.loadReviews(newAlbum.id);
       },
-      (error) => {
+      error: (error) => {
         console.error('Error submitting review:', error);
       }
-    );
+    });
   }
 
   private loadReviews(albumId: string) {
-    this.reviewService.getAllReviews(albumId).subscribe(
-      (reviews) => {
+    this.reviewService.getAllReviews(albumId).subscribe({
+      next: (reviews) => {
         this.reviews = reviews;
       },
-      (error) => {
+      error: (error) => {
         console.error('Error fetching reviews:', error);
       }
-    );
+    });
   }
 
 }

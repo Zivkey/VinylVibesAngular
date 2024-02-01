@@ -29,15 +29,15 @@ export class ProfileComponent implements OnInit {
     if (this.user && this.user.password !== this.confirmPassword) {
       this.errorMessage = 'Passwords do not match!';
     } else if (this.user) {
-      this.userService.updateUserProfile(this.user).subscribe(
-        (response) => {
-          this.userService.setCurrentUser(response); 
+      this.userService.updateUserProfile(this.user).subscribe({
+        next: (response) => {
+          this.userService.setCurrentUser(response);
           this.updateMessage = 'Profile updated successfully.';
         },
-        (error) => {
+        error: (error) => {
           this.errorMessage = 'Failed to update profile. Please try again.';
         }
-      );
+      });
     }
   }
 }

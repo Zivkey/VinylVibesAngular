@@ -8,20 +8,20 @@ import { UserService } from 'src/app/services/user.service';
 import { LikeService } from 'src/app/services/like.service';
 
 @Component({
-  selector: 'app-album', 
+  selector: 'app-album',
   templateUrl: './album.component.html',
   styleUrls: ['./album.component.scss']
 })
 export class AlbumComponent implements OnInit {
   albums: Album[] = [];
-  like: Like = {id: '', value: false, albumId: '', userEmail:''};
+  like: Like = { id: '', value: false, albumId: '', userEmail: '' };
   user: User | null = null;
 
   constructor(
     private albumService: AlbumService,
-     private router: Router, 
+    private router: Router,
     private userService: UserService,
-    private likeService: LikeService) {}
+    private likeService: LikeService) { }
 
   ngOnInit() {
     this.loadAlbums();
@@ -34,7 +34,7 @@ export class AlbumComponent implements OnInit {
   likeCall(albumId: string) {
     this.vote(true, albumId);
   }
-  
+
   dislikeCall(albumId: string) {
     this.vote(false, albumId);
   }
@@ -43,8 +43,8 @@ export class AlbumComponent implements OnInit {
     if (this.user) {
       const userEmail = this.user.email;
       const likeValue = isLike; // Convert boolean to true/false
-      const newLike: Like = {id: '',userEmail, albumId, value: likeValue };
-  
+      const newLike: Like = { id: '', userEmail, albumId, value: likeValue };
+
       this.likeService.create(newLike).subscribe(
         (response) => {
           console.log('Album liked/disliked:', response);
@@ -58,16 +58,16 @@ export class AlbumComponent implements OnInit {
   }
 
 
-  
+
 
   goToAlbumPage(album: Album) {
     this.albumService.setCurrentAlbum(album);
-    this.router.navigate(['home/reviews']); 
+    this.router.navigate(['home/reviews']);
   }
 
   loadAlbums() {
-    this.albumService.getAllAlbums().subscribe(
-      (albums) => {
+    this.albumService.getAllAlbums().subscribe({
+      next: (albums) => {
         this.albums = albums;
         this.albums.forEach((album) => {
           album.isLiked = false;
@@ -77,7 +77,7 @@ export class AlbumComponent implements OnInit {
               (response) => {
                 if (response.value) {
                   album.isLiked = true;
-                } else if (response.value === false){
+                } else if (response.value === false) {
                   album.isDisliked = true;
                 }
                 console.log(album);
@@ -89,9 +89,9 @@ export class AlbumComponent implements OnInit {
           }
         });
       },
-      (error) => {
+      error: (error) => {
         console.error('Error fetching albums:', error);
       }
-    );
+    });
   }
 }

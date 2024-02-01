@@ -3,5 +3,8 @@ export enum Genre {
     Pop = 'POP',
     HipHop = 'HIP_HOP',
     Experimental = 'EXPERIMENTAL',
-    Jazz = 'JAZZ'
+    Jazz = 'JAZZ',
+    Classical = 'CLASSICAL',
+    Funk = 'FUNK',
+    Punk = 'PUNK'
   }

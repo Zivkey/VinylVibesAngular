@@ -16,6 +16,7 @@ export class RegisteradminComponent {
     password: '',
     id: '',
     admin: false,
+    jwt: ''
   };
 
   confirmPassword: string = '';

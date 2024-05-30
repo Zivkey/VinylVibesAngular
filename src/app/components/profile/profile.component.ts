@@ -31,7 +31,7 @@ export class ProfileComponent implements OnInit {
     } else if (this.user) {
       this.userService.updateUserProfile(this.user).subscribe({
         next: (response) => {
-          this.userService.setCurrentUser(response);
+          this.userService.setCurrentUser(response, '');
           this.updateMessage = 'Profile updated successfully.';
         },
         error: (error) => {

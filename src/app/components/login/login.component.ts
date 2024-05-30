@@ -10,7 +10,7 @@ import { User } from 'src/app/models/user.model';
 })
 export class LoginComponent {
 
-  user: User = new User('', '', '', '', '', false); 
+  user: User = new User('', '', '', '', '', false, ''); 
   errorMessage: string | null = null;
 
   constructor(private userService: UserService, private router: Router) { }
@@ -21,7 +21,7 @@ export class LoginComponent {
     this.userService.login(this.user).subscribe({
     next: (loggedInUser) => {
         console.log('Login successful');
-        this.userService.setCurrentUser(loggedInUser);
+        this.userService.setCurrentUser(loggedInUser, loggedInUser.jwt);
         this.router.navigate(['/home']);
       },
      error: (error) => {

@@ -8,7 +8,8 @@ describe('User', () => {
       'Doe',
       'john.doe@example.com',
       'password123',
-      false
+      false,
+      'jwt'
     );
     expect(user).toBeTruthy();
   });

@@ -21,7 +21,8 @@ export class AlbumComponent implements OnInit {
     private albumService: AlbumService,
     private router: Router,
     private userService: UserService,
-    private likeService: LikeService) { }
+    private likeService: LikeService
+  ) { }
 
   ngOnInit() {
     this.loadAlbums();
@@ -42,7 +43,7 @@ export class AlbumComponent implements OnInit {
   vote(isLike: boolean, albumId: string) {
     if (this.user) {
       const userEmail = this.user.email;
-      const likeValue = isLike; // Convert boolean to true/false
+      const likeValue = isLike; 
       const newLike: Like = { id: '', userEmail, albumId, value: likeValue };
 
       this.likeService.create(newLike).subscribe(
@@ -56,9 +57,6 @@ export class AlbumComponent implements OnInit {
       );
     }
   }
-
-
-
 
   goToAlbumPage(album: Album) {
     this.albumService.setCurrentAlbum(album);

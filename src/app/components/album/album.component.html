@@ -19,6 +19,7 @@
                     </div>
                 </div>
                 <button class="reviews" (click)="goToAlbumPage(album)">Reviews</button>
+                <button *ngIf="isAdmin" class="delete" (click)="deleteAlbum(album.id)">Delete</button>
             </div>
         </div>
     </div>

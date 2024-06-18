@@ -16,6 +16,7 @@ export class AlbumComponent implements OnInit {
   albums: Album[] = [];
   like: Like = { id: '', value: false, albumId: '', userEmail: '' };
   user: User | null = null;
+  isAdmin: boolean = false;
 
   constructor(
     private albumService: AlbumService,
@@ -29,6 +30,7 @@ export class AlbumComponent implements OnInit {
     this.user = this.userService.getCurrentUser();
     if (this.user) {
       this.user.password = '';
+      this.isAdmin = this.user.admin === true; 
     }
   }
 
@@ -43,7 +45,7 @@ export class AlbumComponent implements OnInit {
   vote(isLike: boolean, albumId: string) {
     if (this.user) {
       const userEmail = this.user.email;
-      const likeValue = isLike; 
+      const likeValue = isLike;
       const newLike: Like = { id: '', userEmail, albumId, value: likeValue };
 
       this.likeService.create(newLike).subscribe(
@@ -91,5 +93,19 @@ export class AlbumComponent implements OnInit {
         console.error('Error fetching albums:', error);
       }
     });
+  }
+
+  deleteAlbum(id: string) {
+    if (confirm('Are you sure you want to delete this album?')) {
+      this.albumService.deleteAlbum(id).subscribe(
+        response => {
+          console.log('Album deleted:', response);
+          this.loadAlbums(); 
+        },
+        error => {
+          console.error('Error deleting album:', error);
+        }
+      );
+    }
   }
 }

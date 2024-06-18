@@ -74,12 +74,11 @@ button.reviews {
   background-color: #3498db;
   color: #fff;
   transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: #2980b9;
-  }
 }
 
+button.reviews:hover {
+  background-color: #2980b9;
+}
 
 .liked-button {
   background-color: rgb(153, 211, 153) !important;
@@ -87,4 +86,21 @@ button.reviews {
 
 .disliked-button {
   background-color: rgb(221, 117, 117) !important;
+}
+
+button.delete {
+  margin-top: 15px;
+  margin-left: 5px;
+  font-size: 14px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #df3030;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+button.delete:hover {
+  background-color: #c0392b; 
 }

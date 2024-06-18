@@ -34,6 +34,11 @@ export class AlbumService {
     localStorage.setItem('currentAlbum', JSON.stringify(album));
   }
 
+  deleteAlbum(id: string): Observable<any> {
+    const headers = this.getAuthHeaders();
+    return this.http.delete(`${this.baseUrl}/${id}`, { headers });
+  }
+
   getCurrentAlbum(): Album | null {
     const storedAlbum = localStorage.getItem('currentAlbum');
     return storedAlbum ? JSON.parse(storedAlbum) : null;
